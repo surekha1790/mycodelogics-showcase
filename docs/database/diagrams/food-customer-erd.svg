@@ -1,0 +1,161 @@
+<svg viewBox="0 0 956 626" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="956" height="626" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#0c4a6e">food_customer_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">customer-service (:8089) · key columns shown</text>
+<path d="M256,206.0 H309.5 V152.0 H363" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="248" y1="200.0" x2="248" y2="212.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M375,152.0 L363,146.0 M375,152.0 L363,152.0 M375,152.0 L363,158.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<path d="M256,206.0 H309.5 V338.0 H363" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="248" y1="200.0" x2="248" y2="212.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="371" y1="332.0" x2="371" y2="344.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M573,338.0 H636.5 V143.0 H700" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="565" y1="332.0" x2="565" y2="344.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M712,143.0 L700,137.0 M712,143.0 L700,143.0 M712,143.0 L700,149.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<path d="M281,482.0 H322.0 V497.0 H363" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="273" y1="476.0" x2="273" y2="488.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M375,497.0 L363,491.0 M375,497.0 L363,497.0 M375,497.0 L363,503.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<rect x="20" y="54" width="236" height="304" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="20" y="54" width="236" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="20" y="73" width="236" height="7" fill="#e0f2fe"/>
+<line x1="20" y1="80" x2="256" y2="80" stroke="#0284c7" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#0c4a6e">customers</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="246" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="30" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">user_id</text>
+<text x="246" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ auth.users</text>
+<text x="50" y="129" font-size="11" fill="#1f2937">first_name / last_name</text>
+<text x="246" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="147" font-size="11" fill="#1f2937">email</text>
+<text x="246" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="165" font-size="11" fill="#1f2937">phone</text>
+<text x="246" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="183" font-size="11" fill="#1f2937">country_code</text>
+<text x="246" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">char(2)</text>
+<text x="50" y="201" font-size="11" fill="#1f2937">profile_photo_url</text>
+<text x="246" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">text</text>
+<text x="50" y="219" font-size="11" fill="#1f2937">cover_photo_url</text>
+<text x="246" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">text</text>
+<text x="50" y="237" font-size="11" fill="#1f2937">push_token</text>
+<text x="246" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">text</text>
+<text x="50" y="255" font-size="11" fill="#1f2937">preferred_language</text>
+<text x="246" y="255" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="273" font-size="11" fill="#1f2937">notifications_enabled</text>
+<text x="246" y="273" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="291" font-size="11" fill="#1f2937">date_of_birth</text>
+<text x="246" y="291" font-size="9.5" fill="#94a3b8" text-anchor="end">date</text>
+<text x="50" y="309" font-size="11" fill="#1f2937">total_orders</text>
+<text x="246" y="309" font-size="9.5" fill="#94a3b8" text-anchor="end">int</text>
+<text x="50" y="327" font-size="11" fill="#1f2937">active</text>
+<text x="246" y="327" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="30" y="345" font-size="8.8" font-style="italic" fill="#b0b8c4">+ created_at · updated_at</text>
+<rect x="363" y="54" width="218" height="196" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="54" width="218" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="73" width="218" height="7" fill="#e0f2fe"/>
+<line x1="363" y1="80" x2="581" y2="80" stroke="#0284c7" stroke-width="1.1"/>
+<text x="373" y="72" font-size="12.5" font-weight="700" fill="#0c4a6e">customer_addresses</text>
+<text x="373" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="393" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="571" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="373" y="111" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="393" y="111" font-size="11" fill="#1f2937">customer_id</text>
+<text x="571" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ customers</text>
+<text x="393" y="129" font-size="11" fill="#1f2937">label</text>
+<text x="571" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">Home|Work|…</text>
+<text x="393" y="147" font-size="11" fill="#1f2937">street / city</text>
+<text x="571" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="393" y="165" font-size="11" fill="#1f2937">postal_code</text>
+<text x="571" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="393" y="183" font-size="11" fill="#1f2937">country</text>
+<text x="571" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="393" y="201" font-size="11" fill="#1f2937">latitude / longitude</text>
+<text x="571" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">double</text>
+<text x="393" y="219" font-size="11" fill="#1f2937">is_default</text>
+<text x="571" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="373" y="237" font-size="8.8" font-style="italic" fill="#b0b8c4">+ created_at · updated_at</text>
+<rect x="363" y="276" width="210" height="124" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="276" width="210" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="295" width="210" height="7" fill="#e0f2fe"/>
+<line x1="363" y1="302" x2="573" y2="302" stroke="#0284c7" stroke-width="1.1"/>
+<text x="373" y="294" font-size="12.5" font-weight="700" fill="#0c4a6e">customer_wallets</text>
+<text x="373" y="315" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="393" y="315" font-size="11" fill="#1f2937">id</text>
+<text x="563" y="315" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="373" y="333" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="393" y="333" font-size="11" fill="#1f2937">customer_id</text>
+<text x="563" y="333" font-size="9.5" fill="#94a3b8" text-anchor="end">→ customers</text>
+<text x="393" y="351" font-size="11" fill="#1f2937">balance</text>
+<text x="563" y="351" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric(?,2)</text>
+<text x="393" y="369" font-size="11" fill="#1f2937">currency</text>
+<text x="563" y="369" font-size="9.5" fill="#94a3b8" text-anchor="end">EUR</text>
+<text x="373" y="387" font-size="8.8" font-style="italic" fill="#b0b8c4">+ created_at · updated_at</text>
+<rect x="700" y="54" width="236" height="178" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="700" y="54" width="236" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="700" y="73" width="236" height="7" fill="#e0f2fe"/>
+<line x1="700" y1="80" x2="936" y2="80" stroke="#0284c7" stroke-width="1.1"/>
+<text x="710" y="72" font-size="12.5" font-weight="700" fill="#0c4a6e">wallet_transactions</text>
+<text x="710" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="730" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="926" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="710" y="111" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="730" y="111" font-size="11" fill="#1f2937">wallet_id</text>
+<text x="926" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ customer_wallets</text>
+<text x="730" y="129" font-size="11" fill="#1f2937">type</text>
+<text x="926" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">CREDIT|DEBIT</text>
+<text x="730" y="147" font-size="11" fill="#1f2937">amount</text>
+<text x="926" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="730" y="165" font-size="11" fill="#1f2937">balance_after</text>
+<text x="926" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="730" y="183" font-size="11" fill="#1f2937">description</text>
+<text x="926" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="730" y="201" font-size="11" fill="#1f2937">reference</text>
+<text x="926" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="730" y="219" font-size="11" fill="#1f2937">created_at</text>
+<text x="926" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<rect x="20" y="384" width="261" height="196" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="20" y="384" width="261" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="20" y="403" width="261" height="7" fill="#e0f2fe"/>
+<line x1="20" y1="410" x2="281" y2="410" stroke="#0284c7" stroke-width="1.1"/>
+<text x="30" y="402" font-size="12.5" font-weight="700" fill="#0c4a6e">coupons</text>
+<text x="30" y="423" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="423" font-size="11" fill="#1f2937">id</text>
+<text x="271" y="423" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="30" y="441" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="441" font-size="11" fill="#1f2937">code</text>
+<text x="271" y="441" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="459" font-size="11" fill="#1f2937">title / description</text>
+<text x="271" y="459" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="477" font-size="11" fill="#1f2937">discount_type</text>
+<text x="271" y="477" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="495" font-size="11" fill="#1f2937">discount_value</text>
+<text x="271" y="495" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="513" font-size="11" fill="#1f2937">min_order_amount</text>
+<text x="271" y="513" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="531" font-size="11" fill="#1f2937">max_discount</text>
+<text x="271" y="531" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="549" font-size="11" fill="#1f2937">valid_from / valid_until</text>
+<text x="271" y="549" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="50" y="567" font-size="11" fill="#1f2937">active</text>
+<text x="271" y="567" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<rect x="363" y="426" width="255" height="142" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="426" width="255" height="26" rx="7" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="363" y="445" width="255" height="7" fill="#e0f2fe"/>
+<line x1="363" y1="452" x2="618" y2="452" stroke="#0284c7" stroke-width="1.1"/>
+<text x="373" y="444" font-size="12.5" font-weight="700" fill="#0c4a6e">customer_coupons</text>
+<text x="373" y="465" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="393" y="465" font-size="11" fill="#1f2937">id</text>
+<text x="608" y="465" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="393" y="483" font-size="11" fill="#1f2937">customer_id</text>
+<text x="608" y="483" font-size="9.5" fill="#94a3b8" text-anchor="end">→ customers</text>
+<text x="373" y="501" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="393" y="501" font-size="11" fill="#1f2937">coupon_id</text>
+<text x="608" y="501" font-size="9.5" fill="#94a3b8" text-anchor="end">→ coupons</text>
+<text x="373" y="519" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="393" y="519" font-size="11" fill="#1f2937">(customer_id, coupon_id)</text>
+<text x="608" y="519" font-size="9.5" fill="#94a3b8" text-anchor="end">unique</text>
+<text x="393" y="537" font-size="11" fill="#1f2937">claimed_at / used_at</text>
+<text x="608" y="537" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="393" y="555" font-size="11" fill="#1f2937">used_order_id</text>
+<text x="608" y="555" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+</svg>

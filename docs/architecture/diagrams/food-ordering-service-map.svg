@@ -1,0 +1,133 @@
+<svg viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="fa2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1100" height="700" fill="#ffffff"/>
+
+  <!-- Clients -->
+  <rect x="190" y="26" width="220" height="50" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="300" y="47" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Customer Web App</text>
+  <text x="300" y="64" text-anchor="middle" font-size="10" fill="#6d28d9">React 18 + Vite (TypeScript)</text>
+
+  <rect x="440" y="26" width="220" height="50" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="550" y="47" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Admin / Restaurant UI</text>
+  <text x="550" y="64" text-anchor="middle" font-size="10" fill="#6d28d9">React (web dashboard)</text>
+
+  <rect x="690" y="26" width="220" height="50" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="800" y="47" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Mobile App</text>
+  <text x="800" y="64" text-anchor="middle" font-size="10" fill="#6d28d9">React Native / Expo</text>
+
+  <!-- Gateway -->
+  <rect x="150" y="104" width="800" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+  <text x="550" y="128" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1e3a8a">API Gateway — Spring Cloud Gateway (:8080)</text>
+  <text x="550" y="147" text-anchor="middle" font-size="10.5" fill="#1d4ed8">path routing · JWT auth · Redis rate limiting · per-route circuit breakers</text>
+
+  <!-- Platform infra (right) -->
+  <rect x="966" y="100" width="118" height="28" rx="6" fill="#e2e8f0" stroke="#475569"/>
+  <text x="1025" y="118" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">Config Server</text>
+  <rect x="966" y="132" width="118" height="28" rx="6" fill="#e2e8f0" stroke="#475569"/>
+  <text x="1025" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b">Spring Cloud Config</text>
+
+  <!-- clients -> gateway -->
+  <line x1="300" y1="76" x2="330" y2="103" stroke="#475569" stroke-width="1.4" marker-end="url(#fa)"/>
+  <line x1="550" y1="76" x2="550" y2="103" stroke="#475569" stroke-width="1.4" marker-end="url(#fa)"/>
+  <line x1="800" y1="76" x2="770" y2="103" stroke="#475569" stroke-width="1.4" marker-end="url(#fa)"/>
+
+  <!-- gateway -> services -->
+  <line x1="550" y1="160" x2="550" y2="186" stroke="#475569" stroke-width="1.6" marker-end="url(#fa)"/>
+  <text x="565" y="178" font-size="10" fill="#475569">routes /auth, /restaurants, /orders, /payments, /delivery, /loyalty, /kitchen, /customers, /cart …</text>
+
+  <!-- services container -->
+  <rect x="20" y="188" width="1060" height="176" rx="10" fill="#f8fafc" stroke="#0ea5e9" stroke-width="1.2"/>
+  <text x="34" y="206" font-size="11.5" font-weight="700" fill="#0f172a">Business microservices — Spring Boot (one capability + its own database each)</text>
+
+  <!-- service boxes row 1 -->
+  <!-- x: 30, 240, 450, 660, 870 ; w 200 -->
+  <rect x="30" y="216" width="200" height="60" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+  <text x="130" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#4c1d95">auth-service :8081</text>
+  <text x="130" y="254" text-anchor="middle" font-size="9.5" fill="#64748b">registration · login · JWT · OTP · GDPR</text>
+  <text x="130" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">food_auth_db</text>
+
+  <rect x="240" y="216" width="200" height="60" rx="7" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="340" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#14532d">restaurant-service :8082</text>
+  <text x="340" y="254" text-anchor="middle" font-size="9.5" fill="#64748b">restaurants · menus · hours · reviews</text>
+  <text x="340" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">food_restaurant_db</text>
+
+  <rect x="450" y="216" width="200" height="60" rx="7" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="550" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">order-service :8083</text>
+  <text x="550" y="254" text-anchor="middle" font-size="9.5" fill="#64748b">order lifecycle · promos · refunds</text>
+  <text x="550" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">food_order_db · outbox</text>
+
+  <rect x="660" y="216" width="200" height="60" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.2"/>
+  <text x="760" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#881337">payment-service :8084</text>
+  <text x="760" y="254" text-anchor="middle" font-size="9.5" fill="#64748b">Stripe + Razorpay · refunds · webhooks</text>
+  <text x="760" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">food_payment_db</text>
+
+  <rect x="870" y="216" width="200" height="60" rx="7" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+  <text x="970" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">delivery-service :8085</text>
+  <text x="970" y="254" text-anchor="middle" font-size="9.5" fill="#64748b">drivers · trips · zones · ratings</text>
+  <text x="970" y="268" text-anchor="middle" font-size="9" fill="#94a3b8">food_delivery_db</text>
+
+  <!-- service boxes row 2 -->
+  <rect x="30" y="290" width="200" height="60" rx="7" fill="#ffffff" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="130" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#312e81">loyalty-service :8086</text>
+  <text x="130" y="328" text-anchor="middle" font-size="9.5" fill="#64748b">points · tiers · redemption</text>
+  <text x="130" y="342" text-anchor="middle" font-size="9" fill="#94a3b8">food_loyalty_db</text>
+
+  <rect x="240" y="290" width="200" height="60" rx="7" fill="#ffffff" stroke="#0d9488" stroke-width="1.2"/>
+  <text x="340" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#134e4a">kitchen-service :8088</text>
+  <text x="340" y="328" text-anchor="middle" font-size="9.5" fill="#64748b">kitchen display · accept/prepare</text>
+  <text x="340" y="342" text-anchor="middle" font-size="9" fill="#94a3b8">stateless · WebSocket + REST</text>
+
+  <rect x="450" y="290" width="200" height="60" rx="7" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+  <text x="550" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">notification-service :8087</text>
+  <text x="550" y="328" text-anchor="middle" font-size="9.5" fill="#64748b">push (WS) · email (SMTP)</text>
+  <text x="550" y="342" text-anchor="middle" font-size="9" fill="#94a3b8">stateless</text>
+
+  <rect x="660" y="290" width="200" height="60" rx="7" fill="#ffffff" stroke="#0284c7" stroke-width="1.2"/>
+  <text x="760" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#0c4a6e">customer-service :8089</text>
+  <text x="760" y="328" text-anchor="middle" font-size="9.5" fill="#64748b">profiles · addresses · wallet · coupons</text>
+  <text x="760" y="342" text-anchor="middle" font-size="9" fill="#94a3b8">food_customer_db</text>
+
+  <rect x="870" y="290" width="200" height="60" rx="7" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+  <text x="970" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">cart-service :8091</text>
+  <text x="970" y="328" text-anchor="middle" font-size="9.5" fill="#64748b">active cart · item snapshots</text>
+  <text x="970" y="342" text-anchor="middle" font-size="9" fill="#94a3b8">Redis (no SQL DB)</text>
+
+  <!-- services <-> kafka -->
+  <line x1="550" y1="364" x2="550" y2="398" stroke="#b45309" stroke-width="1.8" marker-start="url(#fa2)" marker-end="url(#fa2)"/>
+  <text x="565" y="386" font-size="10" fill="#b45309">publish / consume events</text>
+
+  <!-- Kafka -->
+  <rect x="20" y="400" width="1060" height="46" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="550" y="419" text-anchor="middle" font-size="14" font-weight="700" fill="#7c2d12">Apache Kafka — event bus</text>
+  <text x="550" y="436" text-anchor="middle" font-size="10" fill="#9a3412">order · payment · delivery · loyalty · notification choreography — order-service uses a transactional outbox</text>
+
+  <!-- Data + external -->
+  <rect x="20" y="474" width="330" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="185" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14532d">PostgreSQL</text>
+  <text x="185" y="519" text-anchor="middle" font-size="10" fill="#166534">one database per service (7 databases)</text>
+  <text x="185" y="535" text-anchor="middle" font-size="9.5" fill="#166534">auth · restaurant · order · payment · delivery · loyalty · customer</text>
+
+  <rect x="366" y="474" width="220" height="70" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="476" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7f1d1d">Redis</text>
+  <text x="476" y="519" text-anchor="middle" font-size="10" fill="#991b1b">cart store · gateway rate-limit</text>
+
+  <rect x="602" y="474" width="478" height="70" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="841" y="500" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">External providers</text>
+  <text x="841" y="519" text-anchor="middle" font-size="10" fill="#475569">Stripe · Razorpay (payments) · SMTP email · SMS (OTP) · Maps / geocoding</text>
+  <text x="841" y="535" text-anchor="middle" font-size="9.5" fill="#94a3b8">S3-compatible object storage for restaurant / menu / profile images</text>
+
+  <!-- synchronous REST callouts -->
+  <rect x="20" y="566" width="1060" height="58" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-dasharray="4 3"/>
+  <text x="34" y="585" font-size="11" font-weight="700" fill="#334155">Synchronous REST (Feign / RestTemplate)</text>
+  <text x="34" y="602" font-size="10" fill="#475569">kitchen-service → order-service (mark PREPARING / READY_FOR_PICKUP) · delivery-service → order-service (assign driver, forward status) — order-service is the order's source of truth.</text>
+  <text x="34" y="617" font-size="10" fill="#475569">cart-service snapshots client-supplied menu &amp; price into Redis (no live restaurant-service call). kitchen-service also reads restaurant-service for menu details.</text>
+
+  <text x="20" y="648" font-size="10" fill="#94a3b8">Containerised with Docker and deployed to cloud infrastructure. Stateless services scale horizontally behind the gateway.</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 980 640" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- Actor -->
+  <rect x="118" y="18" width="364" height="42" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="300" y="39" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Customer places order</text>
+  <text x="300" y="54" text-anchor="middle" font-size="10.5" fill="#6d28d9">POST /orders → order-service (via API Gateway, REST)</text>
+  <line x1="300" y1="60" x2="300" y2="79" stroke="#475569" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- ORDER STATE SPINE -->
+  <!-- S1 PLACED -->
+  <rect x="170" y="80" width="260" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="300" y="99" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: PLACED</text>
+  <text x="300" y="115" text-anchor="middle" font-size="10" fill="#1d4ed8">created · stock deducted (REST → inventory)</text>
+
+  <!-- S2 PAID -->
+  <rect x="170" y="176" width="260" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="300" y="203" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: PAID</text>
+
+  <!-- S3 PACKING -->
+  <rect x="170" y="268" width="260" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="300" y="295" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: PACKING</text>
+
+  <!-- S4 SHIPPED -->
+  <rect x="170" y="358" width="260" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="300" y="385" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: SHIPPED</text>
+
+  <!-- S5 OUT_FOR_DELIVERY -->
+  <rect x="170" y="448" width="260" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="300" y="475" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: OUT_FOR_DELIVERY</text>
+
+  <!-- S6 DELIVERED -->
+  <rect x="170" y="538" width="260" height="46" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="300" y="565" text-anchor="middle" font-size="13" font-weight="700" fill="#14532d">Order: DELIVERED</text>
+
+  <!-- transitions (event-driven, dashed amber) with left-aligned labels -->
+  <line x1="300" y1="126" x2="300" y2="175" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="163" y="155" text-anchor="end" font-size="10" fill="#b45309">payment-order-paid</text>
+
+  <line x1="300" y1="222" x2="300" y2="267" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="163" y="248" text-anchor="end" font-size="10" fill="#b45309">shipment-packing</text>
+
+  <line x1="300" y1="314" x2="300" y2="357" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="163" y="339" text-anchor="end" font-size="10" fill="#b45309">shipment-dispatched</text>
+
+  <line x1="300" y1="404" x2="300" y2="447" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="163" y="429" text-anchor="end" font-size="10" fill="#b45309">shipment-out-for-delivery</text>
+
+  <line x1="300" y1="494" x2="300" y2="537" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="163" y="519" text-anchor="end" font-size="10" fill="#b45309">shipment-delivered</text>
+
+  <!-- ===== Right annotations ===== -->
+  <!-- Box A: on order-placed -->
+  <rect x="500" y="80" width="462" height="128" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="514" y="100" font-size="11.5" font-weight="700" fill="#334155">On order-placed (emitted at checkout), consumers react:</text>
+  <text x="522" y="122" font-size="10.5" fill="#475569">• payment-service → create Payment (COD / WALLET / ONLINE)</text>
+  <text x="522" y="141" font-size="10.5" fill="#475569">• shipping-service → create Shipment + packing items</text>
+  <text x="522" y="160" font-size="10.5" fill="#475569">• customer-service → increment customer order count</text>
+  <text x="522" y="179" font-size="10.5" fill="#475569">• inventory-service → stock already deducted at placement</text>
+  <text x="522" y="197" font-size="10" fill="#94a3b8">ONLINE: customer pays via Razorpay → emits payment-order-paid</text>
+  <line x1="430" y1="103" x2="499" y2="120" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
+
+  <!-- Box B: fulfilment -->
+  <rect x="500" y="300" width="462" height="96" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="514" y="322" font-size="11.5" font-weight="700" fill="#7c2d12">Fulfilment — shipping-service (admin-driven)</text>
+  <text x="514" y="344" font-size="10.5" fill="#9a3412">shipping-service publishes each shipment-* event (left).</text>
+  <text x="514" y="363" font-size="10.5" fill="#9a3412">order-service consumes them and advances the order status</text>
+  <text x="514" y="382" font-size="10.5" fill="#9a3412">shown on the spine: PACKING → SHIPPED → OUT_FOR_DELIVERY → DELIVERED.</text>
+  <line x1="430" y1="336" x2="499" y2="340" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#a)"/>
+
+  <!-- Box C: cancellation -->
+  <rect x="500" y="470" width="462" height="112" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="514" y="491" font-size="11.5" font-weight="700" fill="#7f1d1d">Cancellation — order-cancelled (pre-dispatch)</text>
+  <text x="522" y="513" font-size="10.5" fill="#991b1b">• payment-service → cancel, or flag refund if already PAID</text>
+  <text x="522" y="532" font-size="10.5" fill="#991b1b">• inventory-service → restore (release) stock</text>
+  <text x="522" y="551" font-size="10.5" fill="#991b1b">• shipping-service → cancel shipment if not yet dispatched</text>
+  <text x="522" y="571" font-size="10" fill="#b91c1c">order-service also handles payment-order-failed → paymentStatus=FAILED</text>
+  <!-- branch from spine (PAID) to cancellation -->
+  <polyline points="430,199 466,199 466,476 499,476" fill="none" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
+  <text x="472" y="440" font-size="10" fill="#dc2626" transform="rotate(-90 472 440)">order-cancelled</text>
+</svg>

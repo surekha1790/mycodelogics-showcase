@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1020 772" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- Actor -->
+  <rect x="108" y="18" width="364" height="44" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="290" y="40" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">Customer places order</text>
+  <text x="290" y="55" text-anchor="middle" font-size="10.5" fill="#6d28d9">POST /orders → order-service (via API Gateway, REST)</text>
+  <line x1="290" y1="62" x2="290" y2="83" stroke="#475569" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- ORDER STATE SPINE (order-service is the source of truth) -->
+  <!-- S1 PENDING -->
+  <rect x="165" y="84" width="250" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="290" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: PENDING</text>
+  <text x="290" y="120" text-anchor="middle" font-size="10" fill="#1d4ed8">created · food.order.created fan-out (outbox)</text>
+
+  <!-- S2 CONFIRMED -->
+  <rect x="165" y="192" width="250" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="290" y="211" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: CONFIRMED</text>
+  <text x="290" y="228" text-anchor="middle" font-size="10" fill="#1d4ed8">restaurant accepts on kitchen display</text>
+
+  <!-- S3 PREPARING -->
+  <rect x="165" y="300" width="250" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="290" y="319" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: PREPARING</text>
+  <text x="290" y="336" text-anchor="middle" font-size="10" fill="#1d4ed8">kitchen cooking</text>
+
+  <!-- S4 READY_FOR_PICKUP -->
+  <rect x="165" y="408" width="250" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="290" y="427" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: READY_FOR_PICKUP</text>
+  <text x="290" y="444" text-anchor="middle" font-size="10" fill="#1d4ed8">awaiting driver</text>
+
+  <!-- S5 OUT_FOR_DELIVERY -->
+  <rect x="165" y="516" width="250" height="46" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="290" y="535" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Order: OUT_FOR_DELIVERY</text>
+  <text x="290" y="552" text-anchor="middle" font-size="10" fill="#1d4ed8">driver en route · live tracking</text>
+
+  <!-- S6 DELIVERED -->
+  <rect x="165" y="624" width="250" height="46" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="290" y="643" text-anchor="middle" font-size="13" font-weight="700" fill="#14532d">Order: DELIVERED</text>
+  <text x="290" y="660" text-anchor="middle" font-size="10" fill="#15803d">complete</text>
+
+  <!-- transitions (dashed amber) with left-aligned labels -->
+  <line x1="290" y1="130" x2="290" y2="191" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="158" y="157" text-anchor="end" font-size="10" fill="#b45309">kitchen accept</text>
+  <text x="158" y="170" text-anchor="end" font-size="9" fill="#c2843c">POST /orders/{id}/status</text>
+
+  <line x1="290" y1="238" x2="290" y2="299" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="158" y="272" text-anchor="end" font-size="10" fill="#b45309">start prep (kitchen)</text>
+
+  <line x1="290" y1="346" x2="290" y2="407" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="158" y="380" text-anchor="end" font-size="10" fill="#b45309">mark ready (kitchen)</text>
+
+  <line x1="290" y1="454" x2="290" y2="515" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="158" y="488" text-anchor="end" font-size="10" fill="#b45309">driver picks up</text>
+
+  <line x1="290" y1="562" x2="290" y2="623" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#a)"/>
+  <text x="158" y="596" text-anchor="end" font-size="10" fill="#b45309">driver delivers</text>
+
+  <!-- ===== Right annotations ===== -->
+  <!-- Box A: on food.order.created -->
+  <rect x="470" y="84" width="530" height="128" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="484" y="104" font-size="11.5" font-weight="700" fill="#334155">On food.order.created (published via outbox), consumers react:</text>
+  <text x="492" y="126" font-size="10.5" fill="#475569">• payment-service → create PENDING COD payment (card/online pay via gateway)</text>
+  <text x="492" y="145" font-size="10.5" fill="#475569">• kitchen-service → push NEW_ORDER to the kitchen display (WebSocket)</text>
+  <text x="492" y="164" font-size="10.5" fill="#475569">• notification-service → notify restaurant + customer (ORDER_CONFIRMED)</text>
+  <text x="492" y="188" font-size="10" fill="#7c3aed">Card / online: customer pays via Stripe or Razorpay →</text>
+  <text x="492" y="202" font-size="10" fill="#7c3aed">payment-service emits food.payment.success → order-service sets paymentStatus = PAID</text>
+  <line x1="415" y1="107" x2="469" y2="120" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
+
+  <!-- Box B: status choreography -->
+  <rect x="470" y="248" width="530" height="120" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="484" y="268" font-size="11.5" font-weight="700" fill="#7c2d12">Every status change → food.order.status.updated</text>
+  <text x="492" y="290" font-size="10.5" fill="#9a3412">• notification-service → WebSocket push; email on CONFIRMED / OUT_FOR_DELIVERY / DELIVERED</text>
+  <text x="492" y="309" font-size="10.5" fill="#9a3412">• kitchen-service → refresh the kitchen board (CONFIRMED / CANCELLED)</text>
+  <text x="484" y="333" font-size="10.5" fill="#9a3412">kitchen-service drives CONFIRMED → PREPARING → READY_FOR_PICKUP</text>
+  <text x="484" y="351" font-size="10.5" fill="#9a3412">over REST; order-service stays the source of truth for the order.</text>
+  <line x1="415" y1="215" x2="469" y2="300" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#a)"/>
+
+  <!-- Box C: delivery -->
+  <rect x="470" y="430" width="530" height="118" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="484" y="450" font-size="11.5" font-weight="700" fill="#334155">Delivery — delivery-service</text>
+  <text x="492" y="472" font-size="10.5" fill="#475569">• driver assigned → PUT /orders/{id}/assign (REST) → order OUT_FOR_DELIVERY</text>
+  <text x="492" y="491" font-size="10.5" fill="#475569">• food.delivery.driver.assigned → notification-service (DRIVER_ASSIGNED)</text>
+  <text x="492" y="510" font-size="10.5" fill="#475569">• food.driver.location.updated → notification broadcasts live location to /topic</text>
+  <text x="492" y="533" font-size="10" fill="#94a3b8">Trip lifecycle: ACCEPTED → ARRIVED_PICKUP → PICKED_UP → DELIVERED</text>
+  <line x1="415" y1="539" x2="469" y2="500" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
+
+  <!-- Box D: on delivered -->
+  <rect x="470" y="606" width="530" height="82" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="484" y="626" font-size="11.5" font-weight="700" fill="#14532d">On food.order.delivered:</text>
+  <text x="492" y="648" font-size="10.5" fill="#166534">• loyalty-service → award loyalty points (1 point per €1 spent)</text>
+  <text x="492" y="667" font-size="10.5" fill="#166534">• payment-service → mark the COD payment CAPTURED (cash collected)</text>
+  <line x1="415" y1="647" x2="469" y2="640" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
+
+  <!-- Cancellation & refunds (bottom strip) -->
+  <rect x="60" y="706" width="940" height="54" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="76" y="726" font-size="11.5" font-weight="700" fill="#7f1d1d">Cancellation &amp; refunds</text>
+  <text x="76" y="744" font-size="10.3" fill="#991b1b">CANCELLED → payment-service auto-refunds a CAPTURED card payment via Stripe (or cancels an uncaptured one). Customer refund requests route to admin;</text>
+  <text x="76" y="757" font-size="10.3" fill="#991b1b">on approval order-service emits food.refund.approved → payment-service executes the gateway refund, and loyalty points reverse via food.order.items.refunded.</text>
+</svg>

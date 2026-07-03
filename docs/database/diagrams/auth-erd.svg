@@ -1,0 +1,107 @@
+<svg viewBox="0 0 713 656" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="713" height="656" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#4c1d95">auth_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">auth-service (:9001) · key columns shown</text>
+<path d="M360,161.0 H399.0 V203.0 H438" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="352" y1="155.0" x2="352" y2="167.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M450,203.0 L438,197.0 M450,203.0 L438,203.0 M450,203.0 L438,209.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<path d="M648,98.0 H543.0 V203.0 H438" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="640" y1="92.0" x2="640" y2="104.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M450,203.0 L438,197.0 M450,203.0 L438,203.0 M450,203.0 L438,209.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<path d="M360,161.0 H399.0 V335.0 H438" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="352" y1="155.0" x2="352" y2="167.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M450,335.0 L438,329.0 M450,335.0 L438,335.0 M450,335.0 L438,341.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<rect x="20" y="54" width="340" height="214" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="20" y="54" width="340" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="20" y="73" width="340" height="7" fill="#ede9fe"/>
+<line x1="20" y1="80" x2="360" y2="80" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#4c1d95">users</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="350" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">full_name</text>
+<text x="350" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="30" y="129" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="129" font-size="11" fill="#1f2937">email</text>
+<text x="350" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="30" y="147" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="147" font-size="11" fill="#1f2937">mobile</text>
+<text x="350" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="165" font-size="11" fill="#1f2937">password_hash</text>
+<text x="350" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="183" font-size="11" fill="#1f2937">user_type</text>
+<text x="350" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">enum ADMIN_USER|CUSTOMER|B2B_CUSTOMER</text>
+<text x="50" y="201" font-size="11" fill="#1f2937">is_active</text>
+<text x="350" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="219" font-size="11" fill="#1f2937">is_email_verified</text>
+<text x="350" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="237" font-size="11" fill="#1f2937">is_mobile_verified</text>
+<text x="350" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="30" y="255" font-size="8.8" font-style="italic" fill="#b0b8c4">+ audit: created_at · updated_at · created_by</text>
+<rect x="438" y="54" width="210" height="88" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="54" width="210" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="73" width="210" height="7" fill="#ede9fe"/>
+<line x1="438" y1="80" x2="648" y2="80" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="448" y="72" font-size="12.5" font-weight="700" fill="#4c1d95">roles</text>
+<text x="448" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="468" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="638" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">bigint</text>
+<text x="448" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="468" y="111" font-size="11" fill="#1f2937">name</text>
+<text x="638" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="468" y="129" font-size="11" fill="#1f2937">description</text>
+<text x="638" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<rect x="438" y="168" width="210" height="70" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="168" width="210" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="187" width="210" height="7" fill="#ede9fe"/>
+<line x1="438" y1="194" x2="648" y2="194" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="448" y="186" font-size="12.5" font-weight="700" fill="#4c1d95">user_roles</text>
+<text x="448" y="207" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="468" y="207" font-size="11" fill="#1f2937">user_id</text>
+<text x="638" y="207" font-size="9.5" fill="#94a3b8" text-anchor="end">→ users</text>
+<text x="448" y="225" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="468" y="225" font-size="11" fill="#1f2937">role_id</text>
+<text x="638" y="225" font-size="9.5" fill="#94a3b8" text-anchor="end">→ roles</text>
+<rect x="438" y="264" width="210" height="142" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="264" width="210" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="283" width="210" height="7" fill="#ede9fe"/>
+<line x1="438" y1="290" x2="648" y2="290" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="448" y="282" font-size="12.5" font-weight="700" fill="#4c1d95">refresh_tokens</text>
+<text x="448" y="303" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="468" y="303" font-size="11" fill="#1f2937">id</text>
+<text x="638" y="303" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="448" y="321" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="468" y="321" font-size="11" fill="#1f2937">token</text>
+<text x="638" y="321" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="448" y="339" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="468" y="339" font-size="11" fill="#1f2937">user_id</text>
+<text x="638" y="339" font-size="9.5" fill="#94a3b8" text-anchor="end">→ users</text>
+<text x="468" y="357" font-size="11" fill="#1f2937">expiry_date</text>
+<text x="638" y="357" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="468" y="375" font-size="11" fill="#1f2937">is_revoked</text>
+<text x="638" y="375" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="468" y="393" font-size="11" fill="#1f2937">device_info</text>
+<text x="638" y="393" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<rect x="438" y="432" width="255" height="178" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="432" width="255" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="438" y="451" width="255" height="7" fill="#ede9fe"/>
+<line x1="438" y1="458" x2="693" y2="458" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="448" y="450" font-size="12.5" font-weight="700" fill="#4c1d95">otp_records</text>
+<text x="448" y="471" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="468" y="471" font-size="11" fill="#1f2937">id</text>
+<text x="683" y="471" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="468" y="489" font-size="11" fill="#1f2937">identifier</text>
+<text x="683" y="489" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="468" y="507" font-size="11" fill="#1f2937">otp</text>
+<text x="683" y="507" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="468" y="525" font-size="11" fill="#1f2937">channel</text>
+<text x="683" y="525" font-size="9.5" fill="#94a3b8" text-anchor="end">enum SMS|EMAIL</text>
+<text x="468" y="543" font-size="11" fill="#1f2937">purpose</text>
+<text x="683" y="543" font-size="9.5" fill="#94a3b8" text-anchor="end">enum LOGIN|REGISTRATION|…</text>
+<text x="468" y="561" font-size="11" fill="#1f2937">is_used</text>
+<text x="683" y="561" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="468" y="579" font-size="11" fill="#1f2937">attempts</text>
+<text x="683" y="579" font-size="9.5" fill="#94a3b8" text-anchor="end">int</text>
+<text x="468" y="597" font-size="11" fill="#1f2937">expiry_time</text>
+<text x="683" y="597" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+</svg>

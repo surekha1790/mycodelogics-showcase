@@ -1,0 +1,67 @@
+<svg viewBox="0 0 597 386" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="597" height="386" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#881337">payment_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">payment-service (:9006) · key columns shown</text>
+<path d="M287,197.0 H326.0 V152.0 H365" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="279" y1="191.0" x2="279" y2="203.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M377,152.0 L365,146.0 M377,152.0 L365,152.0 M377,152.0 L365,158.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<rect x="20" y="54" width="267" height="286" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="20" y="54" width="267" height="26" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="20" y="73" width="267" height="7" fill="#ffe4e6"/>
+<line x1="20" y1="80" x2="287" y2="80" stroke="#e11d48" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#881337">payments</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="277" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">bigint</text>
+<text x="30" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">order_id</text>
+<text x="277" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ order.orders.order_id</text>
+<text x="50" y="129" font-size="11" fill="#1f2937">customer_id</text>
+<text x="277" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">→ auth.users</text>
+<text x="50" y="147" font-size="11" fill="#1f2937">customer_name / phone</text>
+<text x="277" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="165" font-size="11" fill="#1f2937">order_source</text>
+<text x="277" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="183" font-size="11" fill="#1f2937">method</text>
+<text x="277" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">enum COD|WALLET|ONLINE</text>
+<text x="50" y="201" font-size="11" fill="#1f2937">status</text>
+<text x="277" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">enum PENDING|PAID|FAILED…</text>
+<text x="50" y="219" font-size="11" fill="#1f2937">amount</text>
+<text x="277" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="237" font-size="11" fill="#1f2937">amount_refunded</text>
+<text x="277" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="255" font-size="11" fill="#1f2937">gateway_order_id</text>
+<text x="277" y="255" font-size="9.5" fill="#94a3b8" text-anchor="end">Razorpay</text>
+<text x="50" y="273" font-size="11" fill="#1f2937">gateway_payment_id</text>
+<text x="277" y="273" font-size="9.5" fill="#94a3b8" text-anchor="end">Razorpay</text>
+<text x="50" y="291" font-size="11" fill="#1f2937">gateway_signature</text>
+<text x="277" y="291" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="309" font-size="11" fill="#1f2937">failure_reason</text>
+<text x="277" y="309" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="30" y="327" font-size="8.8" font-style="italic" fill="#b0b8c4">+ audit: created_at · updated_at · created_by</text>
+<rect x="365" y="54" width="212" height="196" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="365" y="54" width="212" height="26" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="365" y="73" width="212" height="7" fill="#ffe4e6"/>
+<line x1="365" y1="80" x2="577" y2="80" stroke="#e11d48" stroke-width="1.1"/>
+<text x="375" y="72" font-size="12.5" font-weight="700" fill="#881337">payment_refunds</text>
+<text x="375" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="395" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="567" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">bigint</text>
+<text x="375" y="111" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="395" y="111" font-size="11" fill="#1f2937">payment_id</text>
+<text x="567" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ payments</text>
+<text x="395" y="129" font-size="11" fill="#1f2937">refund_amount</text>
+<text x="567" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="395" y="147" font-size="11" fill="#1f2937">status</text>
+<text x="567" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">enum PENDING|…</text>
+<text x="395" y="165" font-size="11" fill="#1f2937">reason</text>
+<text x="567" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="395" y="183" font-size="11" fill="#1f2937">gateway_refund_id</text>
+<text x="567" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">Razorpay</text>
+<text x="395" y="201" font-size="11" fill="#1f2937">refunded_to_wallet</text>
+<text x="567" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="395" y="219" font-size="11" fill="#1f2937">initiated_by</text>
+<text x="567" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">admin userId</text>
+<text x="395" y="237" font-size="11" fill="#1f2937">processed_at</text>
+<text x="567" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+</svg>

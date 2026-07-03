@@ -1,0 +1,46 @@
+<svg viewBox="0 0 313 440" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="313" height="440" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#4c1d95">food_auth_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">auth-service (:8081) · key columns shown</text>
+<rect x="20" y="54" width="273" height="340" rx="7" fill="#ffffff" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="20" y="54" width="273" height="26" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.3"/>
+<rect x="20" y="73" width="273" height="7" fill="#ede9fe"/>
+<line x1="20" y1="80" x2="293" y2="80" stroke="#7c3aed" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#4c1d95">users</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="283" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="30" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">email</text>
+<text x="283" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="129" font-size="11" fill="#1f2937">password</text>
+<text x="283" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="147" font-size="11" fill="#1f2937">first_name / last_name</text>
+<text x="283" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="165" font-size="11" fill="#1f2937">phone</text>
+<text x="283" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="183" font-size="11" fill="#1f2937">country_code</text>
+<text x="283" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">char(2)</text>
+<text x="50" y="201" font-size="11" fill="#1f2937">role</text>
+<text x="283" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">enum CUSTOMER|RESTAURANT_OWNER|</text>
+<text x="50" y="219" font-size="11" fill="#1f2937"></text>
+<text x="283" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">DRIVER|ADMIN|SUPPORT</text>
+<text x="50" y="237" font-size="11" fill="#1f2937">email_verified</text>
+<text x="283" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="255" font-size="11" fill="#1f2937">active</text>
+<text x="283" y="255" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="273" font-size="11" fill="#1f2937">preferred_language</text>
+<text x="283" y="273" font-size="9.5" fill="#94a3b8" text-anchor="end">de|en|tr</text>
+<text x="50" y="291" font-size="11" fill="#1f2937">gdpr_consent</text>
+<text x="283" y="291" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="309" font-size="11" fill="#1f2937">gdpr_consent_date</text>
+<text x="283" y="309" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="50" y="327" font-size="11" fill="#1f2937">gdpr_deletion_request_date</text>
+<text x="283" y="327" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="50" y="345" font-size="11" fill="#1f2937">marketing_consent</text>
+<text x="283" y="345" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="50" y="363" font-size="11" fill="#1f2937">created_at / updated_at</text>
+<text x="283" y="363" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="50" y="381" font-size="11" fill="#1f2937">last_login_at</text>
+<text x="283" y="381" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+</svg>

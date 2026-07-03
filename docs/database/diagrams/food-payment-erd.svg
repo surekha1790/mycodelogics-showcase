@@ -1,0 +1,117 @@
+<svg viewBox="0 0 737 554" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="737" height="554" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#881337">food_payment_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">payment-service (:8084) · key columns shown</text>
+<path d="M306,260.0 H347.0 V179.0 H388" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="298" y1="254.0" x2="298" y2="266.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M400,179.0 L388,173.0 M400,179.0 L388,179.0 M400,179.0 L388,185.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<path d="M306,260.0 H347.0 V419.0 H388" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="298" y1="254.0" x2="298" y2="266.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M400,419.0 L388,413.0 M400,419.0 L388,419.0 M400,419.0 L388,425.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<rect x="20" y="54" width="286" height="412" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="20" y="54" width="286" height="26" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="20" y="73" width="286" height="7" fill="#ffe4e6"/>
+<line x1="20" y1="80" x2="306" y2="80" stroke="#e11d48" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#881337">payments</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="296" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="30" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">order_id</text>
+<text x="296" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ order.orders</text>
+<text x="50" y="129" font-size="11" fill="#1f2937">customer_id</text>
+<text x="296" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="50" y="147" font-size="11" fill="#1f2937">amount / subtotal</text>
+<text x="296" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric(10,2)</text>
+<text x="50" y="165" font-size="11" fill="#1f2937">delivery_fee / tip / tax</text>
+<text x="296" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="183" font-size="11" fill="#1f2937">discount_amount</text>
+<text x="296" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="201" font-size="11" fill="#1f2937">currency</text>
+<text x="296" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">EUR</text>
+<text x="50" y="219" font-size="11" fill="#1f2937">status</text>
+<text x="296" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">PENDING|PROCESSING|CAPTURED|</text>
+<text x="50" y="237" font-size="11" fill="#1f2937"></text>
+<text x="296" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">FAILED|CANCELLED|REFUNDED</text>
+<text x="50" y="255" font-size="11" fill="#1f2937">payment_method</text>
+<text x="296" y="255" font-size="9.5" fill="#94a3b8" text-anchor="end">CARD|RAZORPAY|PAYPAL|</text>
+<text x="50" y="273" font-size="11" fill="#1f2937"></text>
+<text x="296" y="273" font-size="9.5" fill="#94a3b8" text-anchor="end">APPLE_PAY|GOOGLE_PAY|COD|WALLET</text>
+<text x="50" y="291" font-size="11" fill="#1f2937">card_last_four / brand / exp</text>
+<text x="296" y="291" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="30" y="309" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="309" font-size="11" fill="#1f2937">stripe_payment_intent_id</text>
+<text x="296" y="309" font-size="9.5" fill="#94a3b8" text-anchor="end">Stripe</text>
+<text x="50" y="327" font-size="11" fill="#1f2937">stripe_charge_id</text>
+<text x="296" y="327" font-size="9.5" fill="#94a3b8" text-anchor="end">Stripe</text>
+<text x="30" y="345" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="345" font-size="11" fill="#1f2937">razorpay_order_id</text>
+<text x="296" y="345" font-size="9.5" fill="#94a3b8" text-anchor="end">Razorpay</text>
+<text x="50" y="363" font-size="11" fill="#1f2937">razorpay_payment_id/signature</text>
+<text x="296" y="363" font-size="9.5" fill="#94a3b8" text-anchor="end">Razorpay</text>
+<text x="50" y="381" font-size="11" fill="#1f2937">refunded_amount</text>
+<text x="296" y="381" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="50" y="399" font-size="11" fill="#1f2937">failure_code / message</text>
+<text x="296" y="399" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="30" y="417" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="417" font-size="11" fill="#1f2937">idempotency_key</text>
+<text x="296" y="417" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="50" y="435" font-size="11" fill="#1f2937">captured_at / failed_at</text>
+<text x="296" y="435" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="30" y="453" font-size="8.8" font-style="italic" fill="#b0b8c4">+ created_at · updated_at</text>
+<rect x="388" y="54" width="329" height="250" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="388" y="54" width="329" height="26" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="388" y="73" width="329" height="7" fill="#ffe4e6"/>
+<line x1="388" y1="80" x2="717" y2="80" stroke="#e11d48" stroke-width="1.1"/>
+<text x="398" y="72" font-size="12.5" font-weight="700" fill="#881337">refunds</text>
+<text x="398" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="418" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="707" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="398" y="111" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="418" y="111" font-size="11" fill="#1f2937">payment_id</text>
+<text x="707" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ payments</text>
+<text x="418" y="129" font-size="11" fill="#1f2937">order_id / customer_id</text>
+<text x="707" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="418" y="147" font-size="11" fill="#1f2937">amount</text>
+<text x="707" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="418" y="165" font-size="11" fill="#1f2937">currency</text>
+<text x="707" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">EUR</text>
+<text x="418" y="183" font-size="11" fill="#1f2937">status</text>
+<text x="707" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">PENDING|PROCESSING|SUCCEEDED|FAILED</text>
+<text x="418" y="201" font-size="11" fill="#1f2937">reason</text>
+<text x="707" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">enum</text>
+<text x="418" y="219" font-size="11" fill="#1f2937">reason_detail</text>
+<text x="707" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">text</text>
+<text x="418" y="237" font-size="11" fill="#1f2937">initiated_by</text>
+<text x="707" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">CUSTOMER|RESTAURANT|ADMIN|SYSTEM</text>
+<text x="398" y="255" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="418" y="255" font-size="11" fill="#1f2937">stripe_refund_id</text>
+<text x="707" y="255" font-size="9.5" fill="#94a3b8" text-anchor="end">Stripe</text>
+<text x="418" y="273" font-size="11" fill="#1f2937">processed_at</text>
+<text x="707" y="273" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+<text x="398" y="291" font-size="8.8" font-style="italic" fill="#b0b8c4">+ created_at · updated_at</text>
+<rect x="388" y="330" width="267" height="178" rx="7" fill="#ffffff" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="388" y="330" width="267" height="26" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.3"/>
+<rect x="388" y="349" width="267" height="7" fill="#ffe4e6"/>
+<line x1="388" y1="356" x2="655" y2="356" stroke="#e11d48" stroke-width="1.1"/>
+<text x="398" y="348" font-size="12.5" font-weight="700" fill="#881337">payment_events</text>
+<text x="398" y="369" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="418" y="369" font-size="11" fill="#1f2937">id</text>
+<text x="645" y="369" font-size="9.5" fill="#94a3b8" text-anchor="end">UUID</text>
+<text x="398" y="387" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="418" y="387" font-size="11" fill="#1f2937">payment_id</text>
+<text x="645" y="387" font-size="9.5" fill="#94a3b8" text-anchor="end">→ payments (nullable)</text>
+<text x="398" y="405" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="418" y="405" font-size="11" fill="#1f2937">stripe_event_id</text>
+<text x="645" y="405" font-size="9.5" fill="#94a3b8" text-anchor="end">Stripe</text>
+<text x="418" y="423" font-size="11" fill="#1f2937">event_type</text>
+<text x="645" y="423" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="418" y="441" font-size="11" fill="#1f2937">payload</text>
+<text x="645" y="441" font-size="9.5" fill="#94a3b8" text-anchor="end">jsonb</text>
+<text x="418" y="459" font-size="11" fill="#1f2937">processed</text>
+<text x="645" y="459" font-size="9.5" fill="#94a3b8" text-anchor="end">bool</text>
+<text x="418" y="477" font-size="11" fill="#1f2937">error</text>
+<text x="645" y="477" font-size="9.5" fill="#94a3b8" text-anchor="end">text</text>
+<text x="418" y="495" font-size="11" fill="#1f2937">created_at / processed_at</text>
+<text x="645" y="495" font-size="9.5" fill="#94a3b8" text-anchor="end">timestamp</text>
+</svg>

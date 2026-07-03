@@ -1,0 +1,57 @@
+<svg viewBox="0 0 940 360" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="940" height="360" fill="#ffffff"/>
+
+  <!-- Actors (left) -->
+  <rect x="30" y="40" width="200" height="52" rx="26" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="130" y="63" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Customer</text>
+  <text x="130" y="80" text-anchor="middle" font-size="10" fill="#6d28d9">web · mobile app</text>
+
+  <rect x="30" y="154" width="200" height="52" rx="26" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="130" y="177" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Store / Restaurant Admin</text>
+  <text x="130" y="194" text-anchor="middle" font-size="10" fill="#6d28d9">catalog · orders · fulfilment</text>
+
+  <rect x="30" y="268" width="200" height="52" rx="26" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="130" y="291" text-anchor="middle" font-size="13" font-weight="700" fill="#4c1d95">Delivery Rider</text>
+  <text x="130" y="308" text-anchor="middle" font-size="10" fill="#6d28d9">assigned deliveries</text>
+
+  <!-- Platform (center) -->
+  <rect x="360" y="120" width="220" height="120" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+  <text x="470" y="164" text-anchor="middle" font-size="15" font-weight="700" fill="#1e3a8a">mycodelogics Platform</text>
+  <text x="470" y="188" text-anchor="middle" font-size="11" fill="#1d4ed8">e-commerce (grocery)</text>
+  <text x="470" y="205" text-anchor="middle" font-size="11" fill="#1d4ed8">food ordering &amp; delivery</text>
+  <text x="470" y="224" text-anchor="middle" font-size="10" fill="#3b82f6">Spring Boot microservices · Kafka</text>
+
+  <!-- External providers (right) -->
+  <rect x="720" y="40" width="190" height="52" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="815" y="63" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">Payment Gateway</text>
+  <text x="815" y="80" text-anchor="middle" font-size="10" fill="#475569">Razorpay</text>
+
+  <rect x="720" y="154" width="190" height="52" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="815" y="177" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">Email / SMS</text>
+  <text x="815" y="194" text-anchor="middle" font-size="10" fill="#475569">notifications · OTP</text>
+
+  <rect x="720" y="268" width="190" height="52" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="815" y="291" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">Maps / Geocoding</text>
+  <text x="815" y="308" text-anchor="middle" font-size="10" fill="#475569">delivery routing · ETA</text>
+
+  <!-- actor -> platform -->
+  <line x1="230" y1="66" x2="359" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="250" y="100" font-size="9.5" fill="#64748b">browse · order · pay · track</text>
+  <line x1="230" y1="180" x2="359" y2="180" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="250" y="172" font-size="9.5" fill="#64748b">manage catalog &amp; orders</text>
+  <line x1="230" y1="294" x2="359" y2="210" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="250" y="270" font-size="9.5" fill="#64748b">update deliveries</text>
+
+  <!-- platform -> external -->
+  <line x1="580" y1="150" x2="719" y2="66" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="592" y="100" font-size="9.5" fill="#64748b">charge / refund</text>
+  <line x1="580" y1="180" x2="719" y2="180" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="600" y="172" font-size="9.5" fill="#64748b">send notifications</text>
+  <line x1="580" y1="210" x2="719" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#c)"/>
+  <text x="600" y="270" font-size="9.5" fill="#64748b">routing / ETA</text>
+</svg>

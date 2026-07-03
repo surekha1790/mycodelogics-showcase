@@ -1,0 +1,46 @@
+<svg viewBox="0 0 652 314" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="652" height="314" fill="#ffffff"/>
+<text x="20" y="38" font-size="15" font-weight="700" fill="#7c2d12">cart_db</text>
+<text x="20" y="52" font-size="10.5" fill="#64748b">cart-service (:9013) · key columns shown</text>
+<path d="M287,98.0 H326.0 V161.0 H365" stroke="#475569" stroke-width="1.3" fill="none"/>
+<line x1="279" y1="92.0" x2="279" y2="104.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M377,161.0 L365,155.0 M377,161.0 L365,161.0 M377,161.0 L365,167.0" stroke="#475569" stroke-width="1.3" fill="none"/>
+<rect x="20" y="54" width="267" height="88" rx="7" fill="#ffffff" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="20" y="54" width="267" height="26" rx="7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="20" y="73" width="267" height="7" fill="#ffedd5"/>
+<line x1="20" y1="80" x2="287" y2="80" stroke="#ea580c" stroke-width="1.1"/>
+<text x="30" y="72" font-size="12.5" font-weight="700" fill="#7c2d12">carts</text>
+<text x="30" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="50" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="277" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">bigint</text>
+<text x="30" y="111" font-size="8.5" font-weight="700" fill="#7c3aed">UQ</text>
+<text x="50" y="111" font-size="11" fill="#1f2937">auth_user_id</text>
+<text x="277" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ auth.users</text>
+<text x="30" y="129" font-size="8.8" font-style="italic" fill="#b0b8c4">+ audit: created_at · updated_at · created_by</text>
+<rect x="365" y="54" width="267" height="214" rx="7" fill="#ffffff" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="365" y="54" width="267" height="26" rx="7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="365" y="73" width="267" height="7" fill="#ffedd5"/>
+<line x1="365" y1="80" x2="632" y2="80" stroke="#ea580c" stroke-width="1.1"/>
+<text x="375" y="72" font-size="12.5" font-weight="700" fill="#7c2d12">cart_items</text>
+<text x="375" y="93" font-size="8.5" font-weight="700" fill="#b45309">PK</text>
+<text x="395" y="93" font-size="11" fill="#1f2937">id</text>
+<text x="622" y="93" font-size="9.5" fill="#94a3b8" text-anchor="end">bigint</text>
+<text x="375" y="111" font-size="8.5" font-weight="700" fill="#0e7490">FK</text>
+<text x="395" y="111" font-size="11" fill="#1f2937">cart_id</text>
+<text x="622" y="111" font-size="9.5" fill="#94a3b8" text-anchor="end">→ carts</text>
+<text x="395" y="129" font-size="11" fill="#1f2937">product_id</text>
+<text x="622" y="129" font-size="9.5" fill="#94a3b8" text-anchor="end">→ product.products</text>
+<text x="395" y="147" font-size="11" fill="#1f2937">product_name / slug</text>
+<text x="622" y="147" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="395" y="165" font-size="11" fill="#1f2937">product_image_url</text>
+<text x="622" y="165" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="395" y="183" font-size="11" fill="#1f2937">unit</text>
+<text x="622" y="183" font-size="9.5" fill="#94a3b8" text-anchor="end">varchar</text>
+<text x="395" y="201" font-size="11" fill="#1f2937">quantity</text>
+<text x="622" y="201" font-size="9.5" fill="#94a3b8" text-anchor="end">int</text>
+<text x="395" y="219" font-size="11" fill="#1f2937">unit_price</text>
+<text x="622" y="219" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="395" y="237" font-size="11" fill="#1f2937">discount_price</text>
+<text x="622" y="237" font-size="9.5" fill="#94a3b8" text-anchor="end">numeric</text>
+<text x="375" y="255" font-size="8.8" font-style="italic" fill="#b0b8c4">+ audit: created_at · updated_at · created_by</text>
+</svg>
