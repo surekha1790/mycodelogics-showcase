@@ -49,6 +49,7 @@ sequenceDiagram
     SHIP--)K: shipment-packing / dispatched / out-for-delivery / delivered
     K--)ORD: PACKING → SHIPPED → OUT_FOR_DELIVERY → DELIVERED
 ```
+
 </details>
 
 ## What happens at each step

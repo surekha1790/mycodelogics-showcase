@@ -56,15 +56,16 @@ flowchart TB
 
     Services -.publish / consume.- KAFKA
 ```
+
 </details>
 
 ## Clients
 
-| App | Folder | Stack |
-|---|---|---|
-| Customer storefront | `food-order-ui` | React 18 + Vite + TypeScript |
-| Admin / restaurant portal | `food-order-admin-ui` | React 18 + Vite + TypeScript |
-| Mobile app | `food-order-mobile-ui` | React Native (Expo) + TypeScript |
+| App                       | Folder                 | Stack                            |
+|---------------------------|------------------------|----------------------------------|
+| Customer storefront       | `food-order-ui`        | React 18 + Vite + TypeScript     |
+| Admin / restaurant portal | `food-order-admin-ui`  | React 18 + Vite + TypeScript     |
+| Mobile app                | `food-order-mobile-ui` | React Native (Expo) + TypeScript |
 
 ## Platform / infrastructure services
 
@@ -77,18 +78,18 @@ flowchart TB
 Only what each service actually does, with its real gateway route prefixes. Primary keys are UUIDs throughout;
 there is no shared base entity — each service owns its own schema.
 
-| Service (port) | Database | Owns (entities) | Responsibilities & gateway routes |
-|---|---|---|---|
-| **auth-service** (:8081) | `food_auth_db` | User | Registration, login, JWT, OTP, GDPR deletion; roles `CUSTOMER` / `RESTAURANT_OWNER` / `DRIVER` / `ADMIN` / `SUPPORT`; `preferred_language` de/en/tr. On register, publishes `food.user.registered`. Routes `/auth/**`, `/admin/users/**` |
-| **restaurant-service** (:8082) | `food_restaurant_db` | RestaurantOwner, Restaurant, MenuCategory, MenuItem, RestaurantHours, RestaurantReview, TableReservation | Restaurants, multilingual menus (en/de/tr), weekly hours, reviews, dine-in reservations, QR. Publishes via transactional **outbox**. Routes `/restaurants/**`, `/owners/**`, `/menus/**`, `/tables/**`, `/qr/**`, `/admin/restaurants/**`, `/admin/menu-items/**` |
-| **order-service** (:8083) | `food_order_db` | Order, OrderItem, OrderStatusHistory, Promotion, PromoUsage, RefundRequest | Order creation & full status lifecycle, promos/discounts, customer refund requests, status history. Source of truth for the order. Publishes via transactional **outbox**. Routes `/orders/**`, `/promotions/**`, `/admin/orders/**` |
-| **payment-service** (:8084) | `food_payment_db` | Payment, Refund, PaymentEvent | **Two gateways — Stripe and Razorpay** — plus COD and wallet; refunds, idempotency keys, raw webhook storage, wallet top-ups; admin finance. Currency EUR. Routes `/payments/**`, `/admin/finance/**` |
-| **delivery-service** (:8085) | `food_delivery_db` | Driver, DriverDelivery, DriverRating, DeliveryZone | Driver profiles, live location, trip lifecycle (`ACCEPTED → ARRIVED_PICKUP → PICKED_UP → DELIVERED`), ratings, per-restaurant delivery zones. Routes `/delivery/**`, `/drivers/**`, `/driver-profiles/**`, `/admin/drivers/**` |
-| **loyalty-service** (:8086) | `food_loyalty_db` | LoyaltyAccount, LoyaltyTransaction | Points and tiers (`BRONZE`/`SILVER`/`GOLD`/`PLATINUM`); earns on delivery, deducts on refund. Route `/loyalty/**` |
-| **notification-service** (:8087) | *(stateless)* | — | WebSocket push (kitchen, customer, order-tracking topics) and email (SMTP); reacts to order, delivery and driver-location events. Routes `/notifications/**`, `/ws/**` |
-| **kitchen-service** (:8088) | *(stateless)* | — | Restaurant kitchen display over WebSocket; accept/prepare/ready actions push order-status changes back to order-service over REST. Route `/kitchen/**` |
-| **customer-service** (:8089) | `food_customer_db` | Customer, CustomerAddress, CustomerWallet, WalletTransaction, Coupon, CustomerCoupon | Customer profiles (auto-created from `food.user.registered`), addresses, wallet, coupons. Routes `/customers/**`, `/admin/profiles/**` |
-| **cart-service** (:8091) | *(Redis)* | Cart, CartItem *(Redis)* | Active cart keyed by user ID; item rows snapshot client-supplied menu-item, price and restaurant so the cart renders without a live restaurant-service call; adding from a different restaurant clears the cart. Route `/cart/**` |
+| Service (port)                   | Database             | Owns (entities)                                                                                          | Responsibilities & gateway routes                                                                                                                                                                                                                                 |
+|----------------------------------|----------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **auth-service** (:8081)         | `food_auth_db`       | User                                                                                                     | Registration, login, JWT, OTP, GDPR deletion; roles `CUSTOMER` / `RESTAURANT_OWNER` / `DRIVER` / `ADMIN` / `SUPPORT`; `preferred_language` de/en/tr. On register, publishes `food.user.registered`. Routes `/auth/**`, `/admin/users/**`                          |
+| **restaurant-service** (:8082)   | `food_restaurant_db` | RestaurantOwner, Restaurant, MenuCategory, MenuItem, RestaurantHours, RestaurantReview, TableReservation | Restaurants, multilingual menus (en/de/tr), weekly hours, reviews, dine-in reservations, QR. Publishes via transactional **outbox**. Routes `/restaurants/**`, `/owners/**`, `/menus/**`, `/tables/**`, `/qr/**`, `/admin/restaurants/**`, `/admin/menu-items/**` |
+| **order-service** (:8083)        | `food_order_db`      | Order, OrderItem, OrderStatusHistory, Promotion, PromoUsage, RefundRequest                               | Order creation & full status lifecycle, promos/discounts, customer refund requests, status history. Source of truth for the order. Publishes via transactional **outbox**. Routes `/orders/**`, `/promotions/**`, `/admin/orders/**`                              |
+| **payment-service** (:8084)      | `food_payment_db`    | Payment, Refund, PaymentEvent                                                                            | **Two gateways — Stripe and Razorpay** — plus COD and wallet; refunds, idempotency keys, raw webhook storage, wallet top-ups; admin finance. Currency EUR. Routes `/payments/**`, `/admin/finance/**`                                                             |
+| **delivery-service** (:8085)     | `food_delivery_db`   | Driver, DriverDelivery, DriverRating, DeliveryZone                                                       | Driver profiles, live location, trip lifecycle (`ACCEPTED → ARRIVED_PICKUP → PICKED_UP → DELIVERED`), ratings, per-restaurant delivery zones. Routes `/delivery/**`, `/drivers/**`, `/driver-profiles/**`, `/admin/drivers/**`                                    |
+| **loyalty-service** (:8086)      | `food_loyalty_db`    | LoyaltyAccount, LoyaltyTransaction                                                                       | Points and tiers (`BRONZE`/`SILVER`/`GOLD`/`PLATINUM`); earns on delivery, deducts on refund. Route `/loyalty/**`                                                                                                                                                 |
+| **notification-service** (:8087) | *(stateless)*        | —                                                                                                        | WebSocket push (kitchen, customer, order-tracking topics) and email (SMTP); reacts to order, delivery and driver-location events. Routes `/notifications/**`, `/ws/**`                                                                                            |
+| **kitchen-service** (:8088)      | *(stateless)*        | —                                                                                                        | Restaurant kitchen display over WebSocket; accept/prepare/ready actions push order-status changes back to order-service over REST. Route `/kitchen/**`                                                                                                            |
+| **customer-service** (:8089)     | `food_customer_db`   | Customer, CustomerAddress, CustomerWallet, WalletTransaction, Coupon, CustomerCoupon                     | Customer profiles (auto-created from `food.user.registered`), addresses, wallet, coupons. Routes `/customers/**`, `/admin/profiles/**`                                                                                                                            |
+| **cart-service** (:8091)         | *(Redis)*            | Cart, CartItem *(Redis)*                                                                                 | Active cart keyed by user ID; item rows snapshot client-supplied menu-item, price and restaurant so the cart renders without a live restaurant-service call; adding from a different restaurant clears the cart. Route `/cart/**`                                 |
 
 ## Synchronous communication (REST)
 
@@ -108,31 +109,32 @@ so an event is never lost if Kafka is briefly down. The table below lists, for e
 consumer(s), and exactly what each consumer does on consume — taken from the producing code and the consumer's
 `@KafkaListener` handlers. Rows are grouped by producer.
 
-| Producer | Event | Consumer | Action performed on consume |
-|---|---|---|---|
-| **auth-service** | `food.user.registered` | customer-service | Auto-creates the `Customer` profile (roles `CUSTOMER` / `ADMIN`). |
-| | `food.user.registered` | restaurant-service | Creates a `RestaurantOwner` when role is `RESTAURANT_OWNER`. |
-| | `food.user.registered` | delivery-service | Creates a `Driver` (status `OFFLINE`) when role is `DRIVER`; idempotent per `user_id`. |
-| | `food.user.gdpr.deletion` | customer-service | Purges the deleted user's profile images. |
-| **order-service** *(outbox)* | `food.order.created` | payment-service | Creates a **pending COD** `Payment` when `paymentMethod = CASH_ON_DELIVERY` (idempotent); card/online orders pay via the gateway directly. |
-| | `food.order.created` | kitchen-service | Pushes a `NEW_ORDER` card to the restaurant's kitchen display over WebSocket. |
-| | `food.order.created` | notification-service | Notifies the restaurant (`NEW_ORDER`) and the customer (`ORDER_CONFIRMED`). |
-| | `food.order.status.updated` | kitchen-service | Pushes `ORDER_STATUS_CHANGED` to the kitchen board for `CONFIRMED` / `CANCELLED`. |
-| | `food.order.status.updated` | notification-service | WebSocket status push to the customer; email on `CONFIRMED` / `OUT_FOR_DELIVERY` / `DELIVERED`. |
-| | `food.order.status.updated` | payment-service | On `CANCELLED`: auto Stripe refund if a card payment was already `CAPTURED`; just cancels the record if still `PENDING` / `PROCESSING`. |
-| | `food.order.delivered` | loyalty-service | Awards `loyaltyPointsEarned` to the customer's account. |
-| | `food.order.delivered` | payment-service | Marks the COD `Payment` as `CAPTURED` (cash collected on delivery). |
-| | `food.order.items.refunded` | loyalty-service | Deducts `loyaltyPointsToDeduct` for the refunded items. |
-| | `food.refund.approved` | payment-service | Executes the admin-approved refund on the gateway (idempotent per refund request). |
-| **payment-service** | `food.payment.success` | order-service | Marks the order `PAID` and stores the payment-intent id (idempotent). Emitted by **both** the Stripe and Razorpay flows. |
-| | `food.wallet.topup.success` | customer-service | Credits the customer's wallet from the top-up. |
-| **delivery-service** | `food.delivery.driver.assigned` | notification-service | Pushes `DRIVER_ASSIGNED` to the order-tracking topic. |
-| | `food.driver.location.updated` | notification-service | Broadcasts the driver's live location to order-tracking subscribers. |
+| Producer                     | Event                           | Consumer             | Action performed on consume                                                                                                                |
+|------------------------------|---------------------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **auth-service**             | `food.user.registered`          | customer-service     | Auto-creates the `Customer` profile (roles `CUSTOMER` / `ADMIN`).                                                                          |
+|                              | `food.user.registered`          | restaurant-service   | Creates a `RestaurantOwner` when role is `RESTAURANT_OWNER`.                                                                               |
+|                              | `food.user.registered`          | delivery-service     | Creates a `Driver` (status `OFFLINE`) when role is `DRIVER`; idempotent per `user_id`.                                                     |
+|                              | `food.user.gdpr.deletion`       | customer-service     | Purges the deleted user's profile images.                                                                                                  |
+| **order-service** *(outbox)* | `food.order.created`            | payment-service      | Creates a **pending COD** `Payment` when `paymentMethod = CASH_ON_DELIVERY` (idempotent); card/online orders pay via the gateway directly. |
+|                              | `food.order.created`            | kitchen-service      | Pushes a `NEW_ORDER` card to the restaurant's kitchen display over WebSocket.                                                              |
+|                              | `food.order.created`            | notification-service | Notifies the restaurant (`NEW_ORDER`) and the customer (`ORDER_CONFIRMED`).                                                                |
+|                              | `food.order.status.updated`     | kitchen-service      | Pushes `ORDER_STATUS_CHANGED` to the kitchen board for `CONFIRMED` / `CANCELLED`.                                                          |
+|                              | `food.order.status.updated`     | notification-service | WebSocket status push to the customer; email on `CONFIRMED` / `OUT_FOR_DELIVERY` / `DELIVERED`.                                            |
+|                              | `food.order.status.updated`     | payment-service      | On `CANCELLED`: auto Stripe refund if a card payment was already `CAPTURED`; just cancels the record if still `PENDING` / `PROCESSING`.    |
+|                              | `food.order.delivered`          | loyalty-service      | Awards `loyaltyPointsEarned` to the customer's account.                                                                                    |
+|                              | `food.order.delivered`          | payment-service      | Marks the COD `Payment` as `CAPTURED` (cash collected on delivery).                                                                        |
+|                              | `food.order.items.refunded`     | loyalty-service      | Deducts `loyaltyPointsToDeduct` for the refunded items.                                                                                    |
+|                              | `food.refund.approved`          | payment-service      | Executes the admin-approved refund on the gateway (idempotent per refund request).                                                         |
+| **payment-service**          | `food.payment.success`          | order-service        | Marks the order `PAID` and stores the payment-intent id (idempotent). Emitted by **both** the Stripe and Razorpay flows.                   |
+|                              | `food.wallet.topup.success`     | customer-service     | Credits the customer's wallet from the top-up.                                                                                             |
+| **delivery-service**         | `food.delivery.driver.assigned` | notification-service | Pushes `DRIVER_ASSIGNED` to the order-tracking topic.                                                                                      |
+|                              | `food.driver.location.updated`  | notification-service | Broadcasts the driver's live location to order-tracking subscribers.                                                                       |
 
 A few events are published for downstream/analytics use but have no consumer inside this snapshot:
 `food.order.payment.success`, `food.payment.failed`, `food.refund.request.submitted`, `food.refund.rejected`,
 `food.order.delivered.by.driver` (delivery-service), and `food.restaurant.created` / `food.reservation.created`
-(restaurant-service). Because consumers react independently, a slow or failed downstream service never blocks order intake.
+(restaurant-service). Because consumers react independently, a slow or failed downstream service never blocks order
+intake.
 
 ## Cross-cutting
 

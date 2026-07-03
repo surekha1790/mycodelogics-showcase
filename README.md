@@ -10,10 +10,10 @@
 **Authors:**
 
 **Surekha Garre** - 11+ years of experience · Backend Engineers · Berlin, Germany
-              - [Surekha Garre — LinkedIn](https://www.linkedin.com/in/surekha-garre-b725691b4)
+- [Surekha Garre — LinkedIn](https://www.linkedin.com/in/surekha-garre-b725691b4)
 
 **Sai Sarath Allada** — 9+ years of experience · Backend Engineers · Berlin, Germany
-                  - [Sai Sarath Allada — LinkedIn](https://www.linkedin.com/in/sai-sarath-allada-505b33202)
+- [Sai Sarath Allada — LinkedIn](https://www.linkedin.com/in/sai-sarath-allada-505b33202)
 ---
 
 ## Live demos
@@ -46,32 +46,32 @@ Both are built on the same backend backbone: **Spring Boot, Microservices**, com
 
 ## Tech stack
 
-| Area | Technologies |
-|---|---|
-| Language | Java 21 |
-| Frameworks | Spring Boot, Spring Data JPA, Hibernate, Spring Security (JWT), Spring Cloud Gateway |
-| Messaging / streaming | Apache Kafka (event-driven architecture) |
-| Databases | PostgreSQL (database-per-service), Redis (cache / cart / sessions) |
-| API | REST, OpenAPI / Swagger |
-| Frontend | React (Vite, TypeScript), HTML, CSS; React Native (Expo) mobile app |
-| Testing | JUnit, Mockito, Cucumber, TestNG |
-| Build | Maven, Gradle |
-| Containers & orchestration | Docker |
-| Cloud | Google Cloud Platform |
+| Area                       | Technologies                                                                         |
+|----------------------------|--------------------------------------------------------------------------------------|
+| Language                   | Java 21                                                                              |
+| Frameworks                 | Spring Boot, Spring Data JPA, Hibernate, Spring Security (JWT), Spring Cloud Gateway |
+| Messaging / streaming      | Apache Kafka (event-driven architecture)                                             |
+| Databases                  | PostgreSQL (database-per-service), Redis (cache / cart / sessions)                   |
+| API                        | REST, OpenAPI / Swagger                                                              |
+| Frontend                   | React (Vite, TypeScript), HTML, CSS; React Native (Expo) mobile app                  |
+| Testing                    | JUnit, Mockito, Cucumber, TestNG                                                     |
+| Build                      | Maven, Gradle                                                                        |
+| Containers & orchestration | Docker                                                                               |
+| Cloud                      | Hetzner Cloud Platform                                                               |
 
 ---
 
 ## Documentation index
 
-| Section | Contents |
-|---|---|
-| [Architecture — system overview](docs/architecture/system-overview.md) | High-level context & the shared microservices backbone |
-| [Architecture — e-commerce](docs/architecture/ecommerce-architecture.md) | Service map, responsibilities and communication |
-| [Architecture — food ordering](docs/architecture/food-ordering-architecture.md) | Service map, responsibilities and communication |
-| [Database design](docs/database/README.md) | ER diagrams and schema notes (database-per-service) |
-| [Key flows](docs/flows/README.md) | Sequence diagrams for the main user journeys |
-| [API overview](docs/api/api-overview.md) | Representative REST endpoints per service |
-| [Architecture decisions](docs/decisions/README.md) | ADRs — the reasoning behind key choices |
+| Section                                                                         | Contents                                               |
+|---------------------------------------------------------------------------------|--------------------------------------------------------|
+| [Architecture — system overview](docs/architecture/system-overview.md)          | High-level context & the shared microservices backbone |
+| [Architecture — e-commerce](docs/architecture/ecommerce-architecture.md)        | Service map, responsibilities and communication        |
+| [Architecture — food ordering](docs/architecture/food-ordering-architecture.md) | Service map, responsibilities and communication        |
+| [Database design](docs/database/README.md)                                      | ER diagrams and schema notes (database-per-service)    |
+| [Key flows](docs/flows/README.md)                                               | Sequence diagrams for the main user journeys           |
+| [API overview](docs/api/api-overview.md)                                        | Representative REST endpoints per service              |
+| [Architecture decisions](docs/decisions/README.md)                              | ADRs — the reasoning behind key choices                |
 
 ---
 

@@ -16,10 +16,10 @@ cross-database foreign keys); such references are marked *"ref &lt;service&gt;"*
 
 ## Conventions
 
-| Convention | Notes |
-|---|---|
-| Keys | Surrogate `bigint` primary keys (`PK`); intra-service foreign keys marked `FK` |
-| Cross-service refs | Stored as plain IDs, annotated `"ref <service>"`, never enforced by FK |
-| Money | `numeric` amount + ISO `currency` code |
-| Timestamps | UTC `timestamp`, `created_at` / `updated_at` audit columns |
-| Status fields | Modelled as enumerated `string` status columns driving the state machine |
+| Convention         | Notes                                                                          |
+|--------------------|--------------------------------------------------------------------------------|
+| Keys               | Surrogate `bigint` primary keys (`PK`); intra-service foreign keys marked `FK` |
+| Cross-service refs | Stored as plain IDs, annotated `"ref <service>"`, never enforced by FK         |
+| Money              | `numeric` amount + ISO `currency` code                                         |
+| Timestamps         | UTC `timestamp`, `created_at` / `updated_at` audit columns                     |
+| Status fields      | Modelled as enumerated `string` status columns driving the state machine       |

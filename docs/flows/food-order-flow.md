@@ -60,6 +60,7 @@ sequenceDiagram
     K--)PAY: mark COD payment CAPTURED
     K--)NOTIF: delivered confirmation (email)
 ```
+
 </details>
 
 ## What happens at each step

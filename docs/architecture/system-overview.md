@@ -32,6 +32,7 @@ flowchart LR
     SYS -->|notifications / OTP| MSG
     SYS -->|routing / ETA| MAPS
 ```
+
 </details>
 
 ## Microservices backbone
@@ -71,6 +72,7 @@ flowchart TB
     CFG -. serves config .- SVCS
     ADM -. monitors .- SVCS
 ```
+
 </details>
 
 The backbone is deliberately shown at the pattern level; the **actual services, ports and events** for each
