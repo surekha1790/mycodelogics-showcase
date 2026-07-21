@@ -60,11 +60,11 @@ flowchart TB
 
 ## Clients
 
-| App                 | Folder                                 | Stack                        |
-|---------------------|----------------------------------------|------------------------------|
-| Customer storefront | `customer-ui` (`ecommerce-frontend`)   | React 18 + Vite + TypeScript |
-| Admin portal        | `admin-ui` (`karshaka-naturals-admin`) | React 18 + Vite + TypeScript |
-| Mobile app          | `mobile-app` (`organic-pot-mobile`)    | React Native (Expo)          |
+| App                 | Folder             | Stack                        |
+|---------------------|--------------------|------------------------------|
+| Customer storefront | `customer-ui`      | React 18 + Vite + TypeScript |
+| Admin portal        | `admin-ui`         | React 18 + Vite + TypeScript |
+| Mobile app          | `mobile-app`       | React Native (Expo)          |
 
 ## Platform / infrastructure services
 
